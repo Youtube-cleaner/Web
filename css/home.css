@@ -1,0 +1,21 @@
+* {
+  margin:0;   /* 마진 리셋 */
+  padding:0;   /* 패딩 리셋 */
+  box-sizing: border-box;   /* 박스 영역은 테두리까지 */ 
+}
+#img2 {
+    display:block; 
+    margin:150 auto; 
+    width:400px;
+    height:200px;
+}
+#url {
+    display:block;
+    margin:auto;
+}
+
+#search {
+    margin:auto;
+    margin-top: 50px;
+    display:block;
+}
