@@ -1,7 +1,7 @@
 * {
-  margin:0;   /* 마진 리셋 */
-  padding:0;   /* 패딩 리셋 */
-  box-sizing: border-box;   /* 박스 영역은 테두리까지 */ 
+  margin:0;   
+  padding:0;  
+  box-sizing: border-box;  
 }
 #img2 {
     display:block; 
