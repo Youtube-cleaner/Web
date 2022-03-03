@@ -1,15 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap');
-
-* {
+* { /* 스타일 초기화 */
   margin:0;   /* 마진 리셋 */
   padding:0;   /* 패딩 리셋 */
   box-sizing: border-box;   /* 박스 영역은 테두리까지 */ 
 }
 a {
-  text-decoration:none;  /* 텍스트 링크 밑줄 없애기 */ 
+  text-decoration:none;  /* 텍스트 링크 밑줄 제거 */ 
 }
 ul {
-  list-style: none;
+  list-style: none; /* 목록 앞에 생성되는 점 제거 */
 }
 
 #container {
@@ -18,22 +16,17 @@ ul {
   background-color: #fff;
 }
 
-/*********************************/
-/* 헤더 영역 - 로고와 내비게이션 */
-/*********************************/
-
 header{
   width:100%;    /*  너비 */
   height:100px;   /* 높이 */ 
   background-color:rgb(255, 255, 255);  
 }
-#img1{
+#img{ /* 이미지 크기 설정 */
   margin: 30px;
   width: 100px;
   height: 100px;
 }
 
-/* 로고 */
 #logo{ 
   float:left;   /* 왼쪽으로 플로팅 */ 
   width:250px;   /*  너비 */ 
@@ -41,20 +34,14 @@ header{
   line-height:100px;  /* 세로로 중간에 맞춤 - 줄간격을 높이 값과 같게 */
   padding-left:20px;  /* 왼쪽에 여백 */
 }
-#logo h1 {
-  font-family:'Merienda', cursive;
-  font-weight:700;
-  font-size:40px;   /* 글자 크기 */
-  color:#fff;   /* 글자 색*/
-  text-shadow:0 -1px 0 #222;  /* 그림자 색 */
-}
-#search {
-  float: right;
+
+#search { /* 조회하기 버튼 크기 및 위치 조정 */
+  float: right; /* 오른쪽으로 플로팅 */
   margin: 30px;
   width: 100px;
   height: 50px;
 }
-#url {
+#url {  /* url 입력 텍스트 크기 조정 */
   margin: 50px;
 }
 
@@ -67,21 +54,20 @@ nav{
 }
 
 #level > li{
-    float:left;
-    position: relative;
+    float:left; /* 왼쪽으로 플로팅 */   
     margin-right:100px;
     margin-left: 100px;
 }
 
-/* 본문 */
+/* 댓글이 나타날 영역 */
 #ex{
     width: 1200px;
     height: 700px;
 }
 
-#rg{
+#rg{ /* 드롭박스의 라벨의 위치 설정*/
   margin-left: 270px;
 }
-#range{
-  float:right;
+#range{ /* 드롭박스 위치 설정 */
+  float:right; /* 오른쪽으로 플로팅 */
 }

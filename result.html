@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
+<head> 
+  <meta charset="UTF-8">  <!-- 한글 정용 -->
   <title>result</title>
-  <link rel="stylesheet" href="css/result.css">
+  <link rel="stylesheet" href="css/result.css"> <!-- result.css 파일에서 선언한 스타일 사용 -->
 </head>
 <body>
-  <div id="container">    
-    <header>
-      <div id="logo">
+  <div id="container">    <!-- 페이지 전체를 하나의 영역으로 설정 -->
+    <header>  <!-- 헤더 부분 -->
+      <div id="logo"> <!-- 이미지가 삽입될 부분 -->
         <a href="index-footer.html">
-          <img src="youtube.png" id="img1">
+          <img src="youtube.png" id="img">
         </a>
       </div>
-      <input type="text" id="url" size="50">
-      <input type="button" id="search" value="조회하기"> 
+      <input type="text" id="url" size="50"> <!-- url이 작성될 텍스트 -->
+      <input type="button" id="search" value="조회하기"> <!-- 조회하기 버튼 -->
     </header>
     
-        <nav>
-            <ul id="level">
-                <li><a href="#">전체</a></li>
-                <li><a href="#">악성</a></li>
-            </ul>
-            <label for="range" id="rg">정렬 순서</label>
-            <select id="range">
-              <option value="des" selected>내림차순</option>
-              <option value="asc">오름차순</option>
-            </select>
-        </nav>
-        <textarea name="db" id="ex" cols="30" rows="10"></textarea>
+    <nav> <!-- 네비게이션 영역 생성 -->
+      <ul id="level"> <!-- 댓글을 구분해서 볼 수 있도록 목록을 생성 -->
+        <li><a href="#">전체</a></li>
+        <li><a href="#">악성</a></li>
+      </ul>
+      <label for="range" id="rg">정렬 순서</label>
+      <select id="range"> <!-- 댓글을 정렬할 방법을 정할 드롭다운 목록 생성 -->
+        <option value="des" selected>내림차순</option>
+        <option value="asc">오름차순</option>
+      </select>
+    </nav>
+    <textarea name="db" id="ex" cols="30" rows="10"></textarea> <!-- 후에 댓글들이 나타날 영역 -->
   </div> 
 </body>
 </html>

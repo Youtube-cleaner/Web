@@ -1,20 +1,20 @@
-* {
-  margin:0;   
-  padding:0;  
-  box-sizing: border-box;  
+* { /* 스타일 초기화 */
+    margin:0;   /* 마진 리셋 */
+    padding:0;   /* 패딩 리셋 */
+    box-sizing: border-box;   /* 박스 영역은 테두리까지 */  
 }
-#img2 {
+#img { /* 이미지 위치 설정 */
     display:block; 
-    margin:50px auto; 
+    margin:50px auto; /* 가운데 정렬 */
     
 }
-#url {
+#url { /* 텍스트 창 위치 설정*/
     display:block;
-    margin:auto;
+    margin:auto; /* 가운데 정렬 */
 }
 
-#search {
-    margin:auto;
+#search {  /* 조회히가 버튼 위치 설정*/
+    margin:auto; /* 가운데 정렬 */
     margin-top: 50px;
-    display:block;
+    display:block; 
 }
