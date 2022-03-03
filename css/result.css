@@ -64,10 +64,3 @@ nav{
     width: 1200px;
     height: 700px;
 }
-
-#rg{ /* 드롭박스의 라벨의 위치 설정*/
-  margin-left: 270px;
-}
-#range{ /* 드롭박스 위치 설정 */
-  float:right; /* 오른쪽으로 플로팅 */
-}
