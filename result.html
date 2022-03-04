@@ -7,22 +7,19 @@
 </head>
 <body>
   <div id="container">    <!-- 페이지 전체를 하나의 영역으로 설정 -->
-    <header>  <!-- 헤더 부분 -->
-      <div id="logo"> <!-- 이미지가 삽입될 부분 -->
-        <a href="index-footer.html">
-          <img src="youtube.png" id="img">
-        </a>
+    <header>
+      <img src="youtube.png" id="logoimg">
+      <h1>유튜브 악플러 검거작전</h1>
+      <div id="urlsummit">
+        <input type="text" id="logourl" size="30"/>
+        <input type="button" value="조회"/>
       </div>
-      <input type="text" id="url" size="50"> <!-- url이 작성될 텍스트 -->
-      <input type="button" id="search" value="조회하기"> <!-- 조회하기 버튼 -->
     </header>
     
-    <nav> <!-- 네비게이션 영역 생성 -->
-      <ul id="level"> <!-- 댓글을 구분해서 볼 수 있도록 목록을 생성 -->
-        <li><a href="#">전체</a></li>
-        <li><a href="#">악성</a></li>
-      </ul>
-    </nav>
+    <div id="navbar">
+      <img src="bts-butter.PNG" id="thumbnail"/>
+    </div>
+    
     <textarea name="db" id="ex" cols="30" rows="10"></textarea> <!-- 후에 댓글들이 나타날 영역 -->
   </div> 
 </body>

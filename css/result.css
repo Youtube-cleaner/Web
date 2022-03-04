@@ -12,19 +12,34 @@ ul {
 
 #container {
   margin:0 auto;  /* 화면 중앙에 배치 */
-  width:1200px;    /* 너비 */    
+  width:100%;    /* 너비 */    
   background-color: #fff;
 }
 
 header{
-  width:100%;    /*  너비 */
-  height:100px;   /* 높이 */ 
-  background-color:rgb(255, 255, 255);  
-}
-#img{ /* 이미지 크기 설정 */
-  margin: 30px;
-  width: 100px;
+  display: block;
   height: 100px;
+  width: 100%;
+  background-color: darkgray;
+}
+h1{
+  color: white; 
+  float: left;
+  line-height: 100px;
+}
+#logoimg{
+  float: left;
+  display: block;
+  height: 75px;
+  width: 75px;
+  margin-top: 12.5px;
+  margin-left: 170px;
+  margin-right: 50px;
+}
+#urlsummit{
+  float: right;
+  margin-top: 40px;
+  margin-right: 170px;
 }
 
 #logo{ 
@@ -46,21 +61,36 @@ header{
 }
 
 /* 내비게이션 */
-nav{  
-  float:right;   /* 오른쪽으로 플로팅 */
-  width:900px;   /*   너비 */  
-  height:100px;   /* 메뉴 영역 높이 */  
-  padding-top:40px;  /* 메뉴를 아래로 내리기 위해 */  
+#navbar{
+  width: 100%;
+  height: fit-content;
+}
+#thumbnail{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10%;
+}
+nav{ 
+  padding-top: 40px;
 }
 
 #level > li{
-    float:left; /* 왼쪽으로 플로팅 */   
-    margin-right:100px;
-    margin-left: 100px;
+  float:left; /* 왼쪽으로 플로팅 */   
+  margin-left:200px;
 }
 
 /* 댓글이 나타날 영역 */
 #ex{
-    width: 1200px;
-    height: 700px;
+  margin-left: 10%;
+  width: 1050px;
+  height: 700px;
+}
+
+#rg{ /* 드롭박스의 라벨의 위치 설정*/
+  float: left;
+  margin-left: 500px;
+}
+#range{ /* 드롭박스 위치 설정 */
+  float:right; /* 오른쪽으로 플로팅 */
+  margin-right: 150px;
 }

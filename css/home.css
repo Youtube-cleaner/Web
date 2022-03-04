@@ -3,10 +3,36 @@
     padding:0;   /* 패딩 리셋 */
     box-sizing: border-box;   /* 박스 영역은 테두리까지 */  
 }
+header{
+    display: block;
+    height: 100px;
+    width: 100%;
+    background-color: darkgray;
+}
+h1{
+    color: white; 
+    float: left;
+    line-height: 100px;
+}
+#logoimg{
+    float: left;
+    display: block;
+    height: 75px;
+    width: 75px;
+    margin-top: 12.5px;
+    margin-left: 170px;
+    margin-right: 50px;
+}
+#urlsummit{
+    float: right;
+    margin-top: 40px;
+    margin-right: 170px;
+}
 #img { /* 이미지 위치 설정 */
     display:block; 
     margin:50px auto; /* 가운데 정렬 */
-    
+    height: 400px;
+    width: 400px;
 }
 #url { /* 텍스트 창 위치 설정*/
     display:block;
