@@ -94,3 +94,20 @@ nav{
   float:right; /* 오른쪽으로 플로팅 */
   margin-right: 150px;
 }
+
+#player{
+  width: 400px;
+  height: 300px;
+  margin-left: 16%;
+}
+
+#yt{
+  width: 100%;
+  height: fit-content;  
+}
+
+#title{
+  float: right;
+  margin-right: 16%;
+  margin-top: 60px;
+}

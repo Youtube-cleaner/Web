@@ -7,7 +7,6 @@
   <script>
     if(localStorage.getItem('yturl')){
       var fullUrl = localStorage.getItem('yturl');
-      var useID = String(fullUrl.substr(fullUrl.length-11, 11))
     }
   </script>
 </head>
@@ -22,9 +21,8 @@
       </div>
     </header>
     
-    <div id="yt">
+    
     <div id="player"></div> 
-    <p id="title"></p>
     <script>
     
       
@@ -36,7 +34,7 @@
       var player;
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
-          videoId: useID,
+          videoId: String(fullUrl.substr(fullUrl.length-11, 11)),
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
@@ -62,38 +60,11 @@
         player.stopVideo();
       }
       function logoNextPage(){
-        window.location.href = 'result.html';
+        window.location.href = '1.html';
         var temp = document.getElementById("logourl").value;
         localStorage.setItem('yturl', temp);
       }
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>;
-    <script type="text/javascript"> var playlist = useID;
-    $(document).ready(function () { 
-      $.get( 
-        "https://www.googleapis.com/youtube/v3/videos", { 
-          part: 'snippet', 
-          maxResults: 50, 
-          id: useID, 
-          key: 'AIzaSyDCXMCLjNhtLqpxpQqP4gMeRE4ZtOCbwq8' 
-        }, 
-         
-        function (data) { 
-          var output; 
-          $.each(data.items, function (i, item) { 
-             
-            vTitle = item.snippet.title; 
-             
-            vTh = item.snippet.channelTitle; 
-            
-            output = vTitle + '<br><br><br><br> 채널명 : ' + vTh;
-            document.getElementById("title").innerHTML = output;
-          }) 
-        } 
-      ); 
-    }); 
-    </script>
-    </div>
     <textarea name="db" id="ex" cols="30" rows="10"></textarea> <!-- 후에 댓글들이 나타날 영역 -->
   </div> 
 </body>

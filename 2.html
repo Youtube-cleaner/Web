@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+  <head> 
+    <meta charset="UTF-8"> 
+    <title>Document</title> 
+  </head> 
+  <body> 
+    <div class="container"> </div> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>; 
+    <script type="text/javascript"> var playlist = '유튜브 영상 고유번호';
+    $(document).ready(function () { 
+      $.get( 
+        "https://www.googleapis.com/youtube/v3/videos", { 
+          part: 'snippet', 
+          maxResults: 50, 
+          id: 'oP9a-uX0YiU', 
+          key: 'AIzaSyDCXMCLjNhtLqpxpQqP4gMeRE4ZtOCbwq8' 
+        }, 
+        
+        function (data) { 
+          var output; 
+          $.each(data.items, function (i, item) { 
+            console.log(item); 
+            vTitle = item.snippet.title; 
+            vId = item.snippet.channelId; 
+            vDe = item.snippet.description; 
+            vTh = item.snippet.channelTitle; 
+            vaaa = item.snippet.thumbnails.standard.url; 
+            output = vTitle + '<br> 채널명 : ' 
+             + vTh; 
+             $("div").append(output); 
+            }) 
+          } 
+          ); 
+        }); 
+             </script> 
+             </body> 
+             </html>

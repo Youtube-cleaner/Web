@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head> 
+  <meta charset="UTF-8">  <!-- 한글 정용 -->
+  <title>result</title>
+  <link rel="stylesheet" href="result.css"> <!-- result.css 파일에서 선언한 스타일 사용 -->
+  <script>
+    if(localStorage.getItem('yturl')){
+      var fullUrl = localStorage.getItem('yturl');
+      var urlID = String(fullUrl.substr(fullUrl.length-11, 11));
+    }
+  </script>
+</head>
+<body>
+  <div id="container">    <!-- 페이지 전체를 하나의 영역으로 설정 -->
+    <header>
+      <img src="youtube.png" id="logoimg">
+      <h1>유튜브 악플러 검거작전</h1>
+      <div id="urlsummit">
+        <input type="text" id="logourl" size="30"/>
+        <button id="logoSearch" onclick="logoNextPage()">조회하기</button>
+      </div>
+    </header>
+    
+    <div id="yt">
+      <div id="player"></div>
+      <p id="title"></p> 
+      <script>
+    
+      
+        // 2. This code loads the IFrame Player API code asynchronously.
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        var player;
+        function onYouTubeIframeAPIReady() {
+          player = new YT.Player('player', {
+            videoId: urlID,
+            events: {
+              'onReady': onPlayerReady,
+              'onStateChange': onPlayerStateChange
+            }
+          });
+        }
+
+        function onPlayerReady(event) {
+          var embedCode = event.target.getVideoEmbedCode();
+        
+          event.target.playVideo();
+        }
+
+        var done = false;
+        function onPlayerStateChange(event) {
+          if (event.data == YT.PlayerState.PLAYING && !done) {
+            done = true;
+          
+          }
+        }
+
+        function stopVideo(){
+          player.stopVideo();
+        }
+        function logoNextPage(){
+          window.location.href = '1.html';
+          var temp = document.getElementById("logourl").value;
+          localStorage.setItem('yturl', temp);
+        }
+      </script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>;
+      <script type="text/javascript"> var playlist = '유튜브 영상 고유번호';
+      $(document).ready(function () { 
+        $.get( 
+          "https://www.googleapis.com/youtube/v3/videos", { 
+            part: 'snippet', 
+            maxResults: 50, 
+            id: 'oP9a-uX0YiU', 
+            key: 'AIzaSyDCXMCLjNhtLqpxpQqP4gMeRE4ZtOCbwq8' 
+          }, 
+           
+          function (data) { 
+            var output; 
+            $.each(data.items, function (i, item) { 
+              //console.log(item); 
+              vTitle = item.snippet.title; 
+              //vId = item.snippet.channelId; 
+              //vDe = item.snippet.description; 
+              vTh = item.snippet.channelTitle; 
+              //vaaa = item.snippet.thumbnails.standard.url; 
+              output = vTitle + '<br><br><br><br> 채널명 : ' + vTh;
+              document.getElementById("title").innerHTML = output;
+            }) 
+          } 
+        ); 
+      }); 
+      </script>
+    </div>
+    <textarea name="db" id="ex" cols="30" rows="10"></textarea> <!-- 후에 댓글들이 나타날 영역 -->
+  </div> 
+</body>
+</html>
