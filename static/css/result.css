@@ -81,10 +81,13 @@ nav{
 
 /* 댓글이 나타날 영역 */
 #ex{
-  margin-left: 10%;
-  width: 1050px;
-  height: 700px;
+  margin-left: 7.5%;
+  width: 85%;
+  
 }
+#uid{width:5%;}
+#score{width:3%;}
+#ox{width:3%;}
 
 #rg{ /* 드롭박스의 라벨의 위치 설정*/
   float: left;
@@ -95,6 +98,11 @@ nav{
   margin-right: 150px;
 }
 
+#dBtn{width:100%;}
+#swapBtn{
+	float:left;
+	margin-left:200px;
+}
 #player{
   width: 400px;
   height: 300px;

@@ -1,0 +1,32 @@
+<html>
+<head>
+	<meta charset="UTF-8">   <!-- 한글 적용 -->
+	<title>main</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='/css/home.css')}}"/>  <!-- home.css 파일에서 선언한 스타일 사용 -->
+</head>
+<body> 
+	<header>	
+		<img src="{{url_for('static', filename='/img/youtube.png')}}" id="logoimg">	
+		<h1>유튜브 악플러 검거작전</h1>
+		<form action = "{{url_for('crawling')}}" method = 'POST' id = 'urlsummit'>
+			<input type="text" name='youtubeurl' id='logourl' size='30'/>
+			<input type='submit' value='조회하기' id="logoSearch" onClick="nextpage()"/>
+		</form>
+	</header>
+	<!-- 본문 -->
+	<p>
+		<img src="{{url_for('static', filename='/img/youtube.png')}}" id="img"/>  <!-- 이미지 삽입 -->
+	</p>
+	<form action = "{{url_for('crawling')}}" method = 'POST'>
+			<input type="text" name='youtubeurl' id='url' size='30'/>
+			<input type='submit' value='조회하기' id="Search"/>
+	</form>
+	<script>
+		funtion nextpage(){
+			var temp = document.getElementById("logourl").value;
+			localStorage.setItem('yturl',temp);
+		}
+	</script>
+
+	</body>
+</html>

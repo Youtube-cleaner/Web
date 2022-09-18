@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head> 
+  <meta charset="UTF-8">  <!-- 한글 적용 -->
+  <title>result</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='/css/result.css')}}"> <!-- result.css 파일에서 선언한 스타일 사용 -->
+  <script type="text/javascript">
+	var fullUrl = new String('{{url}}');
+        var useID = String(fullUrl.substr(fullUrl.length-11, 11));
+  </script>
+</head>
+<body>
+  <div id="container">    <!-- 페이지 전체를 하나의 영역으로 설정 -->
+    <header>
+      <img src="{{url_for('static', filename='/img/youtube.png')}}" id="logoimg">
+      <h1>유튜브 악플러 검거작전</h1>
+      <form action = "{{url_for('crawling')}}" method = 'POST' id = 'urlsummit'>
+			<input type="text" name='youtubeurl' id='logourl' size='30'/>
+			<input type='submit' value='조회하기' id="logoSearch" onClick="nextpage()"/>
+		</form>
+
+    </header>
+    
+    <div id="yt">
+    <div id="player"></div> 
+    <p id="title"></p>
+    <script>
+    
+      
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          videoId: useID,
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+       });
+      }
+
+      function onPlayerReady(event) {
+        var embedCode = event.target.getVideoEmbedCode();
+        
+        event.target.playVideo();
+      }
+
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          done = true;
+          
+        }
+      }
+
+      function stopVideo(){
+        player.stopVideo();
+      }
+      function logoNextPage(){
+        window.location.href = 'result';
+        var temp = document.getElementById("logourl").value;
+        localStorage.setItem('yturl', temp);
+      }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>;
+    <script type="text/javascript"> var playlist = useID;
+    $(document).ready(function () { 
+      $.get( 
+        "https://www.googleapis.com/youtube/v3/videos", { 
+          part: 'snippet', 
+          maxResults: 50, 
+          id: useID, 
+          key: 'AIzaSyDCXMCLjNhtLqpxpQqP4gMeRE4ZtOCbwq8' 
+        }, 
+         
+        function (data) { 
+          var output; 
+          $.each(data.items, function (i, item) { 
+             
+            vTitle = item.snippet.title; 
+             
+            vTh = item.snippet.channelTitle; 
+            
+            output = vTitle + '<br><br><br><br> 채널명 : ' + vTh;
+            document.getElementById("title").innerHTML = output;
+          }) 
+        } 
+      ); 
+    });
+    </script>
+	<script>
+		function ascpage(){
+			window.location.href = '/desc';
+		}
+	</script>
+
+    </div>
+	<div id='dBtn'>
+		<button id='swapBtn' onclick='ascpage()'>내림차순</button>
+	</div>
+    <table border="1" id=ex>
+			<thead>
+        			<td id=uid>userID</td>
+        			<td id=comment>comment</td>
+        			<td id=score>score</td>
+				<td id=ox>욕설 여부</td>
+    			</thead>
+			{% for row in rows %}
+				<tr>
+					<td>{{row[2]}}</td>
+					<td>{{row[1]}}</td>
+					<td>{{row[3]}}</td>
+					<td> X </td>
+				</tr>
+			{% endfor %}
+    		</table>
+</div> 
+</body>
+</html>
